@@ -1,4 +1,5 @@
 var checker = require('./checker');
+var _ = require('lodash');
 
 var waterBottle = {
   volume: 0,
@@ -11,9 +12,13 @@ var waterBottle = {
     this.volume -= this.hydrationValue;
     this.volume = checker.notMinus(this.volume);
   },
+  gulp: function(){
+    this.volume -= (this.hydrationValue * 2);
+    this.volume = checker.notMinus(this.volume);
+  },
   empty: function(){
     this.volume = 0;
-  }
+  },
 }
 
 module.exports = waterBottle;

@@ -30,5 +30,11 @@ describe('Water bottle', function(){
     bottle.drink();
     assert.equal(0, bottle.volume);
   });
+  it('should be able to gulp water, taking twice as much away fromthe bottle volume', function(){
+    bottle.empty();
+    bottle.fill();
+    bottle.gulp();
+    assert.equal(80, bottle.volume);
+  });
 });
 
